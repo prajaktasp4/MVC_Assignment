@@ -1,47 +1,8 @@
-﻿@model  List<EntityFrameworkExample.Models.Product>
-
+﻿
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-<h2>Products</h2>
-<a href="/product/create">Create</a><br />
-<form class="form-check-inline" action="/Product/Index">
-    <label for="search" class="mr-1">Search:</label>
-    <input type="search" class="form-control mr-1" name="search" value="@ViewBag.search"/>
-    <button type="submit" class="btn btn-success">GO</button>
-</form>
-<table class="table">
-    <thead>
-        <tr>
-            <td>ProductID</td>
-            <td>ProductName</td>
-            <td>Price</td>
-            <td>Date Of Purchase</td>
-            <td>Availability Status</td>
-            <td>CatagoryID</td>
-            <td>BrandID</td>
-            <td>Active</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var i in Model)
-            {
-        <tr>
-            <td>@i.ProductID</td>
-            <td>@i.ProductName</td>
-            <td>@i.Price</td>
-            <td>@i.DateOfPurchase.Value.ToString("d/m/yyyy")</td>
-            <td>@i.AvailabilityStatus</td>
-            <td>@i.CatagoryID</td>
-            <td>@i.BrandID</td>
-            <td>@i.Active</td>
-            <td><a href="/product/details/@i.ProductID">Details</a></td>
-            <td><a href="/product/edit/@i.ProductID">Edit</a></td>
-            <td><a href="/product/delete/@i.ProductID">Delete</a></td>
-        </tr>
-            }
-    </tbody>
-</table>
+<h2>Index</h2>
 

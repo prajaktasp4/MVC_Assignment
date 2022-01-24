@@ -12,7 +12,7 @@ namespace EntityFrameworkExample.Controllers
         // GET: Catagory
         public ActionResult Index()
         {
-            EFDBFirstDatabaseEntities db= new EFDBFirstDatabaseEntities();
+            CompanyDbContext db = new CompanyDbContext();
            List<Catagory> catagory= db.Catagories.ToList();
             return View(catagory);
         }
