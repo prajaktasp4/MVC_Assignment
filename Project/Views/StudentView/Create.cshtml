@@ -1,0 +1,121 @@
+﻿@model StudentManagmentSystem.Models.Student
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Shared/_LayoutPage1.cshtml";
+}
+<head>
+    <style>
+        .validation-summary-errors, .field-validation-error
+        {
+            color: red
+        }
+    </style>
+</head>
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm("create", "Student", FormMethod.Post,new {enctype="multipart/form-data"}))
+{
+    <div class="form-row">
+        <div class="form-group col-md-5">
+            
+         
+
+            @Html.LabelFor(temp => temp.FullName)
+
+            @Html.TextBoxFor(temp => temp.FullName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.FullName)
+
+        </div>
+        <div class="form-group col-md-5">
+            @Html.LabelFor(temp => temp.UserID)
+            @Html.TextBoxFor(temp => temp.UserID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.UserID)
+
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group  col-md-5">
+            @Html.LabelFor(temp => temp.EmailID)
+            @Html.TextBoxFor(temp => temp.EmailID, new { @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.EmailID)
+
+
+        </div>
+        <div class="form-group  col-md-5">
+            @Html.LabelFor(temp => temp.DateOFBirth)
+            @Html.TextBoxFor(temp => temp.DateOFBirth, new { @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.DateOFBirth)
+
+
+        </div>
+        <div class="form-group col-md-5">
+            @*@Html.LabelFor(temp => temp.Gender, new { @class = "form-check-label" })
+            @Html.TextBoxFor(temp => temp.Gender, new { @class = "form-control" })*@
+
+            @Html.RadioButtonFor(temp => temp.Gender, "Male", new { @class = "form-check-input" })Male
+        @Html.RadioButtonFor(temp => temp.Gender, "Female", new { @class = "form-check-input" })Female
+
+
+            @Html.ValidationMessageFor(temp => temp.Gender)
+
+        </div>
+        <div class="form-group col-md-5">
+            @Html.LabelFor(temp => temp.Address)
+            @Html.TextBoxFor(temp => temp.Address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.Address)
+
+        </div>
+        <div class="form-group col-md-5">
+            @Html.LabelFor(temp => temp.PhoneNo)
+            @Html.TextBoxFor(temp => temp.PhoneNo, new { @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.PhoneNo)
+
+        </div>
+  
+
+        <div class="form-group  col-md-5">
+            @Html.LabelFor(temp => temp.PreviousQualification)
+            @Html.DropDownListFor(temp => temp.PreviousQualification, new List<SelectListItem>(){
+            new SelectListItem(){Text="BCS",Value="BCS"},
+             new SelectListItem(){Text="BCA",Value="BCA"},
+              new SelectListItem(){Text="12th",Value="12th"},
+            new SelectListItem(){Text="Diploma",Value="Diploma"}},
+               "Please Select", new { @class = "form-control" })
+            @Html.ValidationMessageFor(temp => temp.PreviousQualification)
+
+        </div>
+
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group  col-md-5">
+            @Html.LabelFor(temp => temp.Course)
+            @Html.DropDownListFor(temp => temp.CourseID, new SelectList(@ViewBag.course, "CourseID", "CourseName"), "Please Select", new { @class = "form-control" })
+            @*@Html.ValidationMessageFor(temp => temp.CourseID)*@
+
+        </div>
+
+        <div class="form-group  col-md-5">
+          <label>Photo</label>
+            <input type="file" name="photo" class="form-control-file"/>
+            @*@Html.ValidationMessageFor(temp => temp.CourseID)*@
+
+        </div>
+
+
+    </div>
+
+   
+  
+    @Html.ValidationSummary();
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a href="/Product/Index" class="btn btn-danger">Cancel</a>
+
+
+
+}
+
