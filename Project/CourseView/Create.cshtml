@@ -1,0 +1,22 @@
+﻿@model StudentManagmentSystem.Models.Course
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Create Course</h2>
+@using (Html.BeginForm("Create", "Course", FormMethod.Post))
+{
+    <div class="form-group  col-md-5">
+        @Html.LabelFor(temp => temp.CourseName)
+        @Html.TextBoxFor(temp => temp.CourseName, new { @class = "form-control" })
+
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <a href="/Product/Index" class="btn btn-danger">Cancel</a>
+
+}
+
+
+
+
