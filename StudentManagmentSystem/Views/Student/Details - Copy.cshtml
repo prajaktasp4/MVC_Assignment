@@ -1,0 +1,50 @@
+﻿@model StudentManagmentSystem.Models.Student
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Details</h2>
+<table class="table">
+    <tr>
+        <th>Student ID</th>
+        <td>@Model.StudentID</td>
+    </tr>
+    <tr>
+        <th>FullName</th>
+        <td>@Model.FullName</td>
+    </tr>
+    <tr>
+        <th>UserID</th>
+        <td>@Model.UserID</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.EmailID</td>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <td>@Model.Gender</td>
+    <tr>
+        <th>Date Of Birth</th>
+        <td>@Model.DateOFBirth</td>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <td>@Model.Address</td>
+    </tr>
+    <tr>
+        <th>Phone No.</th>
+        <td>@Model.PhoneNo</td>
+    </tr>
+    <tr>
+        <th>Previous Qualification</th>
+        <td>@Model.PreviousQualification</td>
+    </tr>
+    <tr>
+        <th>Course ID</th>
+        <td>@Model.Course.CourseName</td>
+    </tr>
+    
+</table>
+<a href="/Student/Student">Back to List</a>

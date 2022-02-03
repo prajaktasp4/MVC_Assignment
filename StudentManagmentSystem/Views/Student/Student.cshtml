@@ -1,0 +1,287 @@
+﻿@model List<StudentManagmentSystem.Models.Student>
+@{
+    ViewBag.Title = "Student";
+    Layout = "~/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Student</h2>
+<a href="/Student/create">Create</a>
+<form class="form-inline" action="/Student/Student">
+<label for="search" class="mr-1">Search</label>
+    <input type="text" class="form-control mr-1" name="search" placeholder="search" value=@ViewBag.search/>
+    <button type="submit" class="btn btn-primary">GO</button>
+
+</form>
+
+
+    <table class="table">
+        <tr class="table-secondary">
+            <th style="width:15%">Photo
+
+            </th>
+
+            <th style="width:10%">
+                @if (ViewBag.IconClass == "fa-sort-desc")
+                {
+                    <a href="/student/student?SortColumn=StudentID&IconClass=fa-sort-asc&PageNo=1">StudentID ID</a>
+                    if (ViewBag.SortColumn == "StudentID")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href="/student/student?SortColumn=StudentID&IconClass=fa-sort-desc&PageNo=1">Student ID</a>
+                    if (ViewBag.SortColumn == "StudentID")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+            </th>
+            <th style="width:20%">
+                @if (ViewBag.IconClass == "fa-sort-desc")
+                {
+                    <a href="/student/student?SortColumn=FullName&IconClass=fa-sort-asc&PageNo=1">FullName</a>
+                    if (ViewBag.SortColumn == "FullName")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href="/student/student?SortColumn=FullName&IconClass=fa-sort-desc&PageNo=1">FullName</a>
+                    if (ViewBag.SortColumn == "FullName")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+            </th>
+            <th style="width:10%">
+                @if (ViewBag.IconClass == "fa-sort-desc")
+                {
+                    <a href="/Student/student?SortColumn=UserID&IconClass=fa-sort-asc&PageNo=1">UserID</a>
+                    if (ViewBag.SortColumn == "UserID")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href="/student/student?SortColumn=UserID&IconClass=fa-sort-desc&PageNo=1">UserID</a>
+                    if (ViewBag.SortColumn == "UserID")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+            </th>
+            <th style="width:10%">
+                @if (ViewBag.IconClass == "fa-sort-desc")
+                {
+                    <a href="/student/student?SortColumn=EmailID&IconClass=fa-sort-asc&PageNo=1">EmailID</a>
+                    if (ViewBag.SortColumn == "EmailID")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href="/student/student?SortColumn=EmailID&IconClass=fa-sort-desc&PageNo=1">EmailID</a>
+                    if (ViewBag.SortColumn == "EmailID")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+            </th>
+            <th style="width:10%">
+                @if (ViewBag.IconClass == "fa-sort-desc")
+                {
+                    <a href="/student/student?SortColumn=DateOFBirth&IconClass=fa-sort-asc&PageNo=1">DateOFBirth</a>
+                    if (ViewBag.SortColumn == "DateOFBirth")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href="/student/student?SortColumn=DateOFBirth&IconClass=fa-sort-desc&PageNo=1">DateOFBirth</a>
+                    if (ViewBag.SortColumn == "DateOFBirth")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+            </th>
+            <th style="width:10%">
+                @if (ViewBag.IconClass == "fa-sort-desc")
+                {
+                    <a href="/student/student?SortColumn=Gender&IconClass=fa-sort-desc&PageNo=1">Gender</a>
+                    if (ViewBag.SortColumn == "Gender")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href="/student/student?SortColumn=Gender&IconClass=fa-sort-desc&PageNo=1">Gender</a>
+                    if (ViewBag.SortColumn == "Gender")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+            </th>
+            <th style="width:10%">
+                @if (ViewBag.IconClass == "fa-sort-desc")
+                {
+                    <a href="/student/student?SortColumn=Address&IconClass=fa-sort-asc&PageNo=1">Address</a>
+                    if (ViewBag.SortColumn == "Address")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href="/Student/student?SortColumn=Address&IconClass=fa-sort-desc&PageNo=1">Address</a>
+                    if (ViewBag.SortColumn == "Address")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+
+                }
+            </th>
+            <th style="width:10%">
+                @if (ViewBag.IconClass == "fa-sort-desc")
+                {
+                    <a href="/student/student?SortColumn=PhoneNo&IconClass=fa-sort-asc&PageNo=1">PhoneNo</a>
+                    if (ViewBag.SortColumn == "PhoneNo")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href="/Student/student?SortColumn=PhoneNo&IconClass=fa-sort-desc&PageNo=1">PhoneNo</a>
+                    if (ViewBag.SortColumn == "PhoneNo")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+
+                }
+            </th>
+            <th style="width:10%">
+                @if (ViewBag.IconClass == "fa-sort-desc")
+                {
+                    <a href="/student/student?SortColumn=PreviousQualification&IconClass=fa-sort-asc&PageNo=1">PreviousQualification</a>
+                    if (ViewBag.SortColumn == "PreviousQualification")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href="/Student/student?SortColumn=PreviousQualification&IconClass=fa-sort-desc&PageNo=1">PreviousQualification</a>
+                    if (ViewBag.SortColumn == "PreviousQualification")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+
+                }
+            </th>
+
+            <th style="width:5%">
+                @if (ViewBag.IconClass == "fa-sort-desc")
+                {
+                    <a href="/student/student?SortColumn=CourseID&IconClass=fa-sort-asc&PageNo=1">Course</a>
+                    if (ViewBag.SortColumn == "CourseID")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+                else
+                {
+                    <a href="/student/student?SortColumn=CourseID&IconClass=fa-sort-desc&PageNo=1">Course</a>
+                    if (ViewBag.SortColumn == "CourseID")
+                    {
+                        <i class="fa @ViewBag.IconClass"></i>
+                    }
+                }
+            </th>
+            <th style="width:10%">Actions</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td><img src="data:image;Base64,@item.Photo" width="100px"</td>*@
+                <td>@if (item.Photo != null)
+                {
+                    <span>><img src="@Url.Content(item.Photo)" width="80" height="80" class="img-rounded" /> </span>
+                }</td>
+                <td>@item.StudentID</td>
+                <td>@item.FullName</td>
+                <td>@item.UserID</td>
+                <td>@item.EmailID</td>
+                <td>@item.DateOFBirth.Value.ToString("d/M/yyyy")</td>
+                <td>@item.Gender</td>
+                <td>@item.Address</td>
+                <td>@item.PhoneNo</td>
+                <td>@item.PreviousQualification</td>
+                <td>@item.Course.CourseName</td>
+                <td>
+                    <a href="/Student/Details/@item.StudentID">Details</a>|
+                    <a href="/Student/Edit/@item.StudentID">Edit</a>|
+                    <a href="/Student/Delete/@item.StudentID">Delete</a>
+                </td>
+            </tr>
+
+        }
+        <tr>
+            @{ 
+                int PreviousPage = ViewBag.PageNo - 1;
+                if(PreviousPage<=0)
+                {
+                    PreviousPage = 1;
+                }
+                int NextPage = ViewBag.PageNo + 1;
+                if(NextPage>ViewBag.NoOfPages)
+                {
+                    NextPage = ViewBag.PageNo;
+                }
+
+            }
+            <ul class="pagination justify-content-center">
+
+                <li class="page-item active">
+                    <a class="page-link" href="/student/student?SortColumn=@ViewBag.SortColumn&IconClass=@ViewBag.IconClass&PageNo=@PreviousPage">Prev</a>
+
+                </li>
+                @for (int i = 0; i < ViewBag.NoOfPages; i++)
+                {
+                    if (i + 1 == ViewBag.PageNo)
+                    {
+                        <li class="page-item active">
+                            <a class="page-link" href="/student/student?SortColumn=@ViewBag.SortColumn&IconClass=@ViewBag.IconClass&PageNo=@(i+1)">@(i+1)</a>
+                        </li>
+
+                    }
+                    else
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="/student/student?SortColumn=@ViewBag.SortColumn&IconClass=@ViewBag.IconClass&PageNo=@(i+1)">@(i+1)</a>
+                        </li>
+                    }
+
+                }
+                <li class="page-item active">
+                    <a class="page-link" href="/student/student?SortColumn=@ViewBag.SortColumn&IconClass=@ViewBag.IconClass&PageNo=@NextPage">Next</a>
+
+                </li>
+
+            </ul>
+        </tr>
+
+    </table>
+
+
+
+
+
+   
+

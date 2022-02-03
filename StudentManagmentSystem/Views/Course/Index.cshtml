@@ -1,0 +1,27 @@
+﻿@model List<StudentManagmentSystem.Models.Course>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Courses</h2>
+<a href="/Course/Create">Create</a>
+<table class="table">
+    <tr>
+        <th>CourseID</th>
+        <th>Course Name</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CourseID</td>
+            <td>@item.CourseName<td>
+         </tr>
+        
+            <td><a href="/Course/Edit/@item.CourseID">Edit</a></td>
+            <td><a href="/Course/Delete/@item.CourseID">Delete</a></td>
+       
+    }
+</table>
+

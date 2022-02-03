@@ -1,0 +1,22 @@
+﻿@model StudentManagmentSystem.Models.Course
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Course", FormMethod.Post))
+{
+    <div class="form-group col-md-5">
+        @*@Html.EditorFor(temp=>temp.CourseName,Model.CourseName,new {@class="form-control"})*@
+        @Html.HiddenFor(temp=>temp.CourseID)
+        @Html.LabelFor(temp => temp.CourseName)
+        @Html.TextBoxFor(temp => temp.CourseName, Model.CourseName, new { @class = "form-control" })
+
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+    <a href="/Course/Index" class="btn btn-danger">Cancel</a>
+
+
+}
+

@@ -1,0 +1,88 @@
+﻿@model StudentManagmentSystem.Models.Student
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Delete</h2>
+@using (Html.BeginForm("delete", "Student", FormMethod.Post))
+{
+<table class="table">
+    <div class="form-row">
+        <div class="form-group col-md-5">
+
+            @Html.LabelFor(temp => temp.FullName)
+            @Model.FullName
+            @Html.HiddenFor(temp => temp.StudentID, Model.StudentID)
+
+        </div>
+        <div class="form-group col-md-5">
+            @Html.LabelFor(temp => temp.UserID)
+            @Model.UserID
+
+        </div>
+    </div>
+    <div class="form-row">
+
+        <div class="form-group  col-md-5">
+            @Html.LabelFor(temp => temp.EmailID)
+            @Model.EmailID
+
+        </div>
+        <div class="form-group  col-md-5">
+            @Html.LabelFor(temp => temp.DateOFBirth)
+            @Model.DateOFBirth.Value.ToString()
+
+        </div>
+    </div>
+    <div class="form-group  col-md-5">
+        @Html.LabelFor(temp => temp.Gender)
+        @Model.Gender
+
+    </div>
+    <div class="form-group  col-md-5">
+        @Html.LabelFor(temp => temp.Address)
+
+        @Model.Address
+
+    </div>
+    <div class="form-group  col-md-5">
+        @Html.LabelFor(temp => temp.PhoneNo)
+        @Model.PhoneNo
+
+    </div>
+    <div class="form-row">
+        <div class="form-group  col-md-5">
+
+
+
+            @Html.LabelFor(temp => temp.PreviousQualification)
+
+            Model.PreviousQualification
+
+        </div>
+    </div>
+
+
+
+
+    <div class="form-row">
+        <div class="form-group  col-md-5">
+            @Html.LabelFor(temp => temp.Course)
+            @Model.Course.CourseName
+
+        </div>
+
+
+    </div>
+
+
+</table>
+    <button type="submit" class="btn btn-success">Delete</button>
+    <a href="/Student/Student" class="btn btn-danger">Cancel</a>
+
+}
+
+
+
+
